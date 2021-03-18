@@ -1,0 +1,43 @@
+local library = {}
+
+local Main = Instance.new("Frame")
+local UIGridLayout = Instance.new("UIGridLayout")
+
+
+Main.Name = "Main"
+Main.Parent = game.StarterGui.UiLibrary
+Main.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+Main.Position = UDim2.new(0.230207056, 0, 0.199294537, 0)
+Main.Size = UDim2.new(0, 443, 0, 340)
+Main.Draggable = true
+
+UIGridLayout.Parent = Main
+UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIGridLayout.CellSize = UDim2.new(1, 1, 0, 30)
+
+function library:AddButton(name)
+	local TextButton = Instance.new("TextButton")
+	TextButton.Parent = Main
+	TextButton.BackgroundColor3 = Color3.fromRGB(34, 226, 255)
+	TextButton.Size = UDim2.new(0, 200, 0, 50)
+	TextButton.Font = Enum.Font.DenkOne
+	TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+	TextButton.TextScaled = true
+	TextButton.TextSize = 14.000
+	TextButton.TextWrapped = true
+end
+
+function library:AddLabel(name)
+	local Title = Instance.new("TextLabel")
+	Title.Name = "Title"
+	Title.Parent = Main
+	Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Title.BackgroundTransparency = 1.000
+	Title.Size = UDim2.new(0, 444, 0, 43)
+	Title.Font = Enum.Font.SourceSans
+	Title.Text = "Ui Library"
+	Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Title.TextScaled = true
+	Title.TextSize = 14.000
+	Title.TextWrapped = true
+end
