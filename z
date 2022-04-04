@@ -1,0 +1,618 @@
+local Library = {}
+
+function Library:CreateWindow(Title, Title2)
+	
+	if game.CoreGui:FindFirstChild("UILib") then
+		game.CoreGui:FindFirstChild("UILib"):Destroy()
+	end
+	
+	Title=Title or "New Window"
+	Title2=Title2 or "Game"
+	
+	local UILib = Instance.new("ScreenGui")
+	local Main = Instance.new("Frame")
+	local LibTitle = Instance.new("TextLabel")
+	local LibTitleUICorner = Instance.new("UICorner")
+	local LibGameName = Instance.new("TextLabel")
+	local LibGameNameUICorner = Instance.new("UICorner")
+
+	
+	UILib.Name = "UILib"
+	UILib.Parent = game.CoreGui
+	UILib.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+	Main.Name = "Main"
+	Main.Parent = UILib
+	Main.BackgroundColor3 = Color3.fromRGB(54, 54, 54)
+	Main.BorderSizePixel = 0
+	Main.Position = UDim2.new(0.234652117, 0, 0.159045726, 0)
+	Main.Size = UDim2.new(0, 389, 0, 342)
+	Main.Visible = false
+
+	LibTitle.Name = "LibTitle"
+	LibTitle.Parent = Main
+	LibTitle.BackgroundColor3 = Color3.fromRGB(54, 54, 54)
+	LibTitle.BackgroundTransparency = 1.000
+	LibTitle.BorderSizePixel = 0
+	LibTitle.Position = UDim2.new(0.0154241649, 0, 0, 0)
+	LibTitle.Size = UDim2.new(0, 336, 0, 19)
+	LibTitle.Font = Enum.Font.SourceSans
+	LibTitle.Text = Title
+	LibTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+	LibTitle.TextScaled = true
+	LibTitle.TextSize = 14.000
+	LibTitle.TextWrapped = true
+	LibTitle.TextXAlignment = Enum.TextXAlignment.Left
+
+	LibTitleUICorner.Name = "LibTitleUICorner"
+	LibTitleUICorner.Parent = LibTitle
+
+	LibGameName.Name = "LibGameName"
+	LibGameName.Parent = Main
+	LibGameName.BackgroundColor3 = Color3.fromRGB(54, 54, 54)
+	LibGameName.BackgroundTransparency = 1.000
+	LibGameName.BorderSizePixel = 0
+	LibGameName.Position = UDim2.new(0.0154241649, 0, 0.055555556, 0)
+	LibGameName.Size = UDim2.new(0, 336, 0, 17)
+	LibGameName.Font = Enum.Font.SourceSans
+	LibGameName.Text = Title2
+	LibGameName.TextColor3 = Color3.fromRGB(166, 166, 166)
+	LibGameName.TextScaled = true
+	LibGameName.TextSize = 14.000
+	LibGameName.TextWrapped = true
+	LibGameName.TextXAlignment = Enum.TextXAlignment.Left
+
+	LibGameNameUICorner.Name = "LibGameNameUICorner"
+	LibGameNameUICorner.Parent = LibGameName
+	
+
+	local Tabs = Instance.new("ScrollingFrame")
+
+	Tabs.Name = "Tabs"
+	Tabs.Parent = Main
+	Tabs.Active = true
+	Tabs.BackgroundColor3 = Color3.fromRGB(63, 63, 63)
+	Tabs.BackgroundTransparency = 1.000
+	Tabs.BorderSizePixel = 0
+	Tabs.Position = UDim2.new(0.0154241649, 0, 0.154970765, 0)
+	Tabs.Size = UDim2.new(0, 106, 0, 270)
+	Tabs.ZIndex = 2
+	Tabs.ScrollBarThickness = 0
+
+	local TabsUICorner = Instance.new("UICorner")
+	
+	TabsUICorner.CornerRadius = UDim.new(0, 6)
+	TabsUICorner.Name = "TabsUICorner"
+	TabsUICorner.Parent = Tabs
+	
+	local UIGridLayout = Instance.new("UIGridLayout")
+
+	UIGridLayout.Parent = Tabs
+	UIGridLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+	UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+	UIGridLayout.CellSize = UDim2.new(0, 100, 0, 25)
+	
+	local Page = Instance.new("ScrollingFrame")
+	local NewPageUIListLayout = Instance.new("UIListLayout")
+	
+	Page.Name = "Page"
+	Page.Parent = Main
+	Page.Active = true
+	Page.BackgroundColor3 = Color3.fromRGB(63, 63, 63)
+	Page.BackgroundTransparency = 1.000
+	Page.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	Page.BorderSizePixel = 0
+	Page.Position = UDim2.new(0.303341895, 0, 0.154970765, 0)
+	Page.Size = UDim2.new(0, 260, 0, 281)
+	Page.ScrollBarThickness = 4
+
+	NewPageUIListLayout.Name = "NewPageUIListLayout"
+	NewPageUIListLayout.Parent = Page
+	NewPageUIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+	NewPageUIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+	NewPageUIListLayout.Padding = UDim.new(0, 5)
+	
+	local PagesFolder = Instance.new("Folder")
+
+	PagesFolder.Name = "newPage"
+	PagesFolder.Parent = Page
+	
+local Background = Instance.new("Frame")
+local BackgroundPage = Instance.new("Frame")
+local Exit = Instance.new("TextButton")
+	local ExitUICorner = Instance.new("UICorner")
+	
+	Background.Name = "Background"
+	Background.Parent = Main
+	Background.BackgroundColor3 = Color3.fromRGB(63, 63, 63)
+	Background.BorderSizePixel = 0
+	Background.Position = UDim2.new(0.0154241649, 0, 0.131578952, 0)
+	Background.Size = UDim2.new(0, 106, 0, 289)
+
+	BackgroundPage.Name = "BackgroundPage"
+	BackgroundPage.Parent = Main
+	BackgroundPage.BackgroundColor3 = Color3.fromRGB(63, 63, 63)
+	BackgroundPage.BorderSizePixel = 0
+	BackgroundPage.Position = UDim2.new(0.303341895, 0, 0.131578952, 0)
+	BackgroundPage.Size = UDim2.new(0, 260, 0, 289)
+	BackgroundPage.ZIndex = 0
+
+	Exit.Name = "Exit"
+	Exit.Parent = Main
+	Exit.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	Exit.BorderSizePixel = 0
+	Exit.Position = UDim2.new(0.902114034, 0, 0.0329933837, 0)
+	Exit.Size = UDim2.new(0, 27, 0, 17)
+	Exit.AutoButtonColor = false
+	Exit.Font = Enum.Font.SourceSans
+	Exit.Text = "X"
+	Exit.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Exit.TextScaled = true
+	Exit.TextSize = 14.000
+	Exit.TextWrapped = true
+	Exit.MouseButton1Click:Connect(function()
+		local Main = Main
+
+		local z1 = Background
+		local z2 = BackgroundPage
+		local z3 = Page
+		local z4 = Tabs
+		local z5 = Exit
+		local z6 = Title
+		local z7 = LibGameName
+
+			z1.Visible = false
+			z2.Visible = false
+			z3.Visible = false
+			z4.Visible = false
+			z5.Visible = false
+			z6.Visible = false
+			z7.Visible = false
+
+			Main:TweenSize(UDim2.new(0, 389,0, 0), "Out", "Quint", 0.5)
+			wait(4)
+			Main:Destroy()
+	end)
+
+	ExitUICorner.CornerRadius = UDim.new(0, 6)
+	ExitUICorner.Name = "ExitUICorner"
+	ExitUICorner.Parent = Exit
+	
+	local UICorner = Instance.new("UICorner")
+
+	UICorner.Parent = Main
+	
+	local TabHandler = {}
+	
+	function TabHandler:CreateTab(tabname)
+		tabname = tabname or "New Tab"
+		
+		local Tab = Instance.new("TextButton")
+		local TabUICorner = Instance.new("UICorner")
+		local NewPage = Instance.new("ScrollingFrame")
+		local NewPageUIListLayout = Instance.new("UIListLayout")
+
+		Tab.Name = "Tab"
+		Tab.Parent = Tabs
+		Tab.BackgroundColor3 = Color3.fromRGB(74, 74, 74)
+		Tab.BorderSizePixel = 0
+		Tab.Position = UDim2.new(0.0535714291, 0, 0.0242214538, 0)
+		Tab.Size = UDim2.new(0, 100, 0, 18)
+		Tab.Font = Enum.Font.SourceSans
+		Tab.Text = tabname
+		Tab.TextColor3 = Color3.fromRGB(255, 255, 255)
+		Tab.TextScaled = true
+		Tab.TextSize = 14.000
+		Tab.TextWrapped = true
+
+		TabUICorner.CornerRadius = UDim.new(0, 4)
+		TabUICorner.Name = "TabUICorner"
+		TabUICorner.Parent = Tab
+		
+		Tab.MouseButton1Click:Connect(function()
+			for i,v in next, PagesFolder:GetChildren() do 
+				v.Visible = false  
+			end 
+			NewPage.Visible = true
+			for i,v in next, Tabs:GetChildren() do   
+				if v:IsA("TextButton") then 
+					game.TweenService:Create(v, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
+						BackgroundColor3 = Color3.fromRGB(74, 74, 74) 
+					}):Play()
+				end
+			end
+			game.TweenService:Create(Tab, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
+				BackgroundColor3 = Color3.fromRGB(102, 102, 102)
+			}):Play()
+		end)
+		
+
+		NewPage.Name = "Page"
+		NewPage.Parent = PagesFolder
+		NewPage.Active = true
+		NewPage.BackgroundColor3 = Color3.fromRGB(63, 63, 63)
+		NewPage.BackgroundTransparency = 1.000
+		NewPage.BorderColor3 = Color3.fromRGB(27, 42, 53)
+		NewPage.BorderSizePixel = 0
+		NewPage.Position = UDim2.new(0.303341895, 0, 0.154970765, 0)
+		NewPage.Size = UDim2.new(0, 260, 0, 281)
+		NewPage.ScrollBarThickness = 4
+
+		NewPageUIListLayout.Name = "NewPageUIListLayout"
+		NewPageUIListLayout.Parent = NewPage
+		NewPageUIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+		NewPageUIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+		NewPageUIListLayout.Padding = UDim.new(0, 5)
+
+	end
+	
+	local LibraryCreate = {}
+	
+	function LibraryCreate:CreateToggle(togtext, callback)
+		togtext = togtext or "Toggle"
+		callback = callback or function() end
+		
+		local Holder_2 = Instance.new("Frame")
+		local ToggleFrame = Instance.new("Frame")
+		local ToggleFrameUICorner = Instance.new("UICorner")
+		local Toggle = Instance.new("TextButton")
+		local ToggleUICorner = Instance.new("UICorner")
+		local ToggleTitle = Instance.new("TextLabel")
+		
+		Holder_2.Name = "Holder"
+		Holder_2.Parent = PagesFolder
+		Holder_2.BackgroundColor3 = Color3.fromRGB(57, 57, 57)
+		Holder_2.BorderSizePixel = 0
+		Holder_2.Position = UDim2.new(0.0326923095, 0, 0.375590533, 0)
+		Holder_2.Size = UDim2.new(0, 241, 0, 52)
+
+		ToggleFrame.Name = "ToggleFrame"
+		ToggleFrame.Parent = Holder_2
+		ToggleFrame.BackgroundColor3 = Color3.fromRGB(74, 74, 74)
+		ToggleFrame.BorderSizePixel = 0
+		ToggleFrame.Position = UDim2.new(0.0379013419, 0, 0.177850187, 0)
+		ToggleFrame.Size = UDim2.new(0, 222, 0, 32)
+
+		ToggleFrameUICorner.CornerRadius = UDim.new(0, 6)
+		ToggleFrameUICorner.Name = "ToggleFrameUICorner"
+		ToggleFrameUICorner.Parent = ToggleFrame
+
+		Toggle.Name = "Toggle"
+		Toggle.Parent = ToggleFrame
+		Toggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+		Toggle.BorderSizePixel = 0
+		Toggle.Position = UDim2.new(0.0421436243, 0, 0.153027758, 0)
+		Toggle.Size = UDim2.new(0, 22, 0, 22)
+		Toggle.AutoButtonColor = false
+		Toggle.Font = Enum.Font.SourceSans
+		Toggle.Text = ""
+		Toggle.TextColor3 = Color3.fromRGB(255, 255, 255)
+		Toggle.TextScaled = true
+		Toggle.TextSize = 14.000
+		Toggle.TextWrapped = true
+
+
+		ToggleUICorner.CornerRadius = UDim.new(999, 999)
+		ToggleUICorner.Name = "ToggleUICorner"
+		ToggleUICorner.Parent = Toggle
+
+		ToggleTitle.Name = "ToggleTitle"
+		ToggleTitle.Parent = ToggleFrame
+		ToggleTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		ToggleTitle.BackgroundTransparency = 1.000
+		ToggleTitle.Position = UDim2.new(0.180674642, 0, 0, 0)
+		ToggleTitle.Size = UDim2.new(0, 181, 0, 31)
+		ToggleTitle.Font = Enum.Font.SourceSans
+		ToggleTitle.Text = togtext
+		ToggleTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+		ToggleTitle.TextScaled = true
+		ToggleTitle.TextSize = 14.000
+		ToggleTitle.TextWrapped = true
+		ToggleTitle.TextXAlignment = Enum.TextXAlignment.Left
+		
+
+		local tog = false
+
+		Toggle.MouseButton1Click:Connect(function()
+			
+
+			
+
+			tog = not tog
+			callback(tog) 
+			if tog then 
+				game.TweenService:Create(ToggleFrame, TweenInfo.new(0.15, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
+					BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+				}):Play()
+
+			else
+				game.TweenService:Create(ToggleFrame, TweenInfo.new(0.15, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
+					BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+				}):Play()
+			end
+		end)
+		
+	end
+	
+	function LibraryCreate:CreateSlider(text, minvalue, maxvalue, callback)
+		text = text or "Slider"
+		minvalue = minvalue or 0
+		maxvalue = maxvalue or 100
+		callback = callback or function() end
+		
+		local mouse = game.Players.LocalPlayer:GetMouse()
+		local uis = game:GetService("UserInputService")
+		local Value;
+
+		local Holder_4 = Instance.new("Frame")
+		local Title = Instance.new("TextLabel")
+		local SliderTitleUICorner = Instance.new("UICorner")
+		local Valuee = Instance.new("TextLabel")
+		local ValueUICorner = Instance.new("UICorner")
+		local SliderButton = Instance.new("TextButton")
+		local SliderMove = Instance.new("Frame")
+		
+		Holder_4.Name = "Holder"
+		Holder_4.Parent = PagesFolder
+		Holder_4.BackgroundColor3 = Color3.fromRGB(57, 57, 57)
+		Holder_4.BorderSizePixel = 0
+		Holder_4.Position = UDim2.new(0.0365384631, 0, 0.405693948, 0)
+		Holder_4.Size = UDim2.new(0, 241, 0, 78)
+
+		Title.Name = "Title"
+		Title.Parent = Holder_4
+		Title.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+		Title.BorderSizePixel = 0
+		Title.Position = UDim2.new(0.0389722139, 0, 0.139738426, 0)
+		Title.Size = UDim2.new(0, 123, 0, 23)
+		Title.Font = Enum.Font.SourceSans
+		Title.Text = text
+		Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+		Title.TextScaled = true
+		Title.TextSize = 14.000
+		Title.TextWrapped = true
+
+		SliderTitleUICorner.CornerRadius = UDim.new(0, 4)
+		SliderTitleUICorner.Name = "SliderTitleUICorner"
+		SliderTitleUICorner.Parent = Title
+
+		Valuee.Name = "Value"
+		Valuee.Parent = Holder_4
+		Valuee.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+		Valuee.BorderSizePixel = 0
+		Valuee.Position = UDim2.new(0.619885087, 0, 0.139738426, 0)
+		Valuee.Size = UDim2.new(0, 80, 0, 23)
+		Valuee.Font = Enum.Font.SourceSans
+		Valuee.Text = minvalue.."/"..maxvalue
+		Valuee.TextColor3 = Color3.fromRGB(255, 255, 255)
+		Valuee.TextScaled = true
+		Valuee.TextSize = 14.000
+		Valuee.TextWrapped = true
+
+		ValueUICorner.CornerRadius = UDim.new(0, 4)
+		ValueUICorner.Name = "ValueUICorner"
+		ValueUICorner.Parent = Value
+
+		SliderButton.Name = "SliderButton"
+		SliderButton.Parent = Holder_4
+		SliderButton.BackgroundColor3 = Color3.fromRGB(74, 74, 74)
+		SliderButton.BorderSizePixel = 0
+		SliderButton.Position = UDim2.new(0.0384615399, 0, 0.5230667, 0)
+		SliderButton.Size = UDim2.new(0, 222, 0, 28)
+		SliderButton.Font = Enum.Font.SourceSans
+		SliderButton.Text = ""
+		SliderButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+		SliderButton.TextScaled = true
+		SliderButton.TextSize = 14.000
+		SliderButton.TextWrapped = true
+		SliderButton.AutoButtonColor = false
+
+		SliderMove.Name = "SliderMove"
+		SliderMove.Parent = SliderButton
+		SliderMove.BackgroundColor3 = Color3.fromRGB(255, 128, 24)
+		SliderMove.BorderSizePixel = 0
+		SliderMove.Size = UDim2.new(0, 0, 0, 28)
+		
+		SliderButton.MouseButton1Down:Connect(function()
+			Value = math.floor((((tonumber(maxvalue) - tonumber(minvalue)) / 318) * SliderMove.AbsoluteSize.X) + tonumber(minvalue)) or 0
+			pcall(function()
+				callback(Value)
+			end)
+			SliderMove.Size = UDim2.new(0, math.clamp(mouse.X - SliderMove.AbsolutePosition.X, 0, 318), 0, 16)
+			moveconnection = mouse.Move:Connect(function()
+				Valuee.Text = Value.."/"..maxvalue
+				Value = math.floor((((tonumber(maxvalue) - tonumber(minvalue)) / 318) * SliderMove.AbsoluteSize.X) + tonumber(minvalue))
+				pcall(function()
+					callback(Value)
+				end)
+				SliderMove.Size = UDim2.new(0, math.clamp(mouse.X - SliderMove.AbsolutePosition.X, 0, 318), 0, 16)
+			end)
+			releaseconnection = uis.InputEnded:Connect(function(Mouse)
+				if Mouse.UserInputType == Enum.UserInputType.MouseButton1 then
+					Value = math.floor((((tonumber(maxvalue) - tonumber(minvalue)) / 318) * SliderMove.AbsoluteSize.X) + tonumber(minvalue))
+					pcall(function()
+						callback(Value)
+					end)
+					SliderMove.Size = UDim2.new(0, math.clamp(mouse.X - SliderMove.AbsolutePosition.X, 0, 318), 0, 16)
+					moveconnection:Disconnect()
+					releaseconnection:Disconnect()
+				end
+			end)
+		end)
+
+	end
+	
+	function LibraryCreate:CreateTextBox(text, callback)
+		text = text or "TextLabel"
+		callback = callback or function() end
+		
+		local Holder_3 = Instance.new("Frame")
+		local TextBox = Instance.new("TextBox")
+		local TextboxUICorner = Instance.new("UICorner")
+		local TxtBoxTitle = Instance.new("TextLabel")
+		
+		Holder_3.Name = "Holder"
+		Holder_3.Parent = Page
+		Holder_3.BackgroundColor3 = Color3.fromRGB(57, 57, 57)
+		Holder_3.BorderSizePixel = 0
+		Holder_3.Position = UDim2.new(0.0365384631, 0, 0.405693948, 0)
+		Holder_3.Size = UDim2.new(0, 241, 0, 78)
+
+		TextBox.Parent = Holder_3
+		TextBox.BackgroundColor3 = Color3.fromRGB(74, 74, 74)
+		TextBox.BorderSizePixel = 0
+		TextBox.Position = UDim2.new(0.0389722362, 0, 0.510853887, 0)
+		TextBox.Size = UDim2.new(0, 222, 0, 28)
+		TextBox.Font = Enum.Font.SourceSans
+		TextBox.PlaceholderText = "Type Here"
+		TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+		TextBox.TextScaled = true
+		TextBox.TextSize = 14.000
+		TextBox.TextWrapped = true
+		
+		TextBox.Focused:Connect(function()
+			TextBox.FocusLost:Wait()
+			callback()
+		end)
+
+		TextboxUICorner.CornerRadius = UDim.new(0, 4)
+		TextboxUICorner.Name = "TextboxUICorner"
+		TextboxUICorner.Parent = TextBox
+
+		TxtBoxTitle.Name = "TxtBoxTitle"
+		TxtBoxTitle.Parent = Holder_3
+		TxtBoxTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		TxtBoxTitle.BackgroundTransparency = 1.000
+		TxtBoxTitle.Position = UDim2.new(0.0389722139, 0, 0.139738426, 0)
+		TxtBoxTitle.Size = UDim2.new(0, 222, 0, 23)
+		TxtBoxTitle.Font = Enum.Font.SourceSans
+		TxtBoxTitle.Text = text
+		TxtBoxTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+		TxtBoxTitle.TextScaled = true
+		TxtBoxTitle.TextSize = 14.000
+		TxtBoxTitle.TextWrapped = true
+		
+	end
+	
+	function LibraryCreate:CreateButton(btntext, callback)
+		btntext = btntext or "Button"
+		callback = callback or function() end
+		
+		local Holder = Instance.new("Frame")
+		local Button = Instance.new("TextButton")
+		local ButtonUICorner = Instance.new("UICorner")
+		
+		Holder.Name = "Holder"
+		Holder.Parent = PagesFolder
+		Holder.BackgroundColor3 = Color3.fromRGB(57, 57, 57)
+		Holder.BorderSizePixel = 0
+		Holder.Position = UDim2.new(0.0365384631, 0, 0.11743772, 0)
+		Holder.Size = UDim2.new(0, 241, 0, 52)
+
+		Button.Name = "Button"
+		Button.Parent = Holder
+		Button.BackgroundColor3 = Color3.fromRGB(74, 74, 74)
+		Button.BorderSizePixel = 0
+		Button.Position = UDim2.new(0.0384615399, 0, 0.215374395, 0)
+		Button.Size = UDim2.new(0, 222, 0, 28)
+		Button.Font = Enum.Font.SourceSans
+		Button.Text = btntext
+		Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+		Button.TextScaled = true
+		Button.TextSize = 14.000
+		Button.TextWrapped = true
+		Button.MouseButton1Click:Connect(function()
+			callback()
+		end)
+
+		ButtonUICorner.CornerRadius = UDim.new(0, 4)
+		ButtonUICorner.Name = "ButtonUICorner"
+		ButtonUICorner.Parent = Button
+	end
+	
+	function LibraryCreate:CreateNotify(Title, Desc, Time)
+		Title = Title or "TextLabel"
+		Desc = Desc or "Description"
+		Time = Time or 5
+		
+		local CustomNotify = Instance.new("ScreenGui")
+		local NotificationPlace = Instance.new("Frame")
+		local Notification = Instance.new("Frame")
+		local NotifyUICorner = Instance.new("UICorner")
+		local NotifyTitle = Instance.new("TextLabel")
+		local NotifyDescription = Instance.new("TextLabel")
+		local UIListLayout = Instance.new("UIListLayout")
+
+		CustomNotify.Name = "CustomNotify"
+		CustomNotify.Parent = game.CoreGui
+		CustomNotify.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+		NotificationPlace.Name = "NotificationPlace"
+		NotificationPlace.Parent = CustomNotify
+		NotificationPlace.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		NotificationPlace.BackgroundTransparency = 1.000
+		NotificationPlace.Position = UDim2.new(0.713400245, 0, 0.0159045719, 0)
+		NotificationPlace.Size = UDim2.new(0, 203, 0, 489)
+
+		Notification.Name = "Notification"
+		Notification.Parent = NotificationPlace
+		Notification.BackgroundColor3 = Color3.fromRGB(49, 49, 49)
+		Notification.BorderSizePixel = 0
+		Notification.Position = UDim2.new(0.0344827585, 0, 0.772595465, 0)
+		Notification.Size = UDim2.new(0, 186, 0, 105)
+
+		NotifyUICorner.Name = "NotifyUICorner"
+		NotifyUICorner.Parent = Notification
+
+		NotifyTitle.Name = "Title"
+		NotifyTitle.Parent = Notification
+		NotifyTitle.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+		NotifyTitle.BorderSizePixel = 0
+		NotifyTitle.Size = UDim2.new(0, 186, 0, 30)
+		NotifyTitle.Font = Enum.Font.SourceSans
+		NotifyTitle.Text = Title
+		NotifyTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+		NotifyTitle.TextScaled = true
+		NotifyTitle.TextSize = 14.000
+		NotifyTitle.TextWrapped = true
+
+		NotifyDescription.Name = "Description"
+		NotifyDescription.Parent = Notification
+		NotifyDescription.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+		NotifyDescription.BackgroundTransparency = 1.000
+		NotifyDescription.BorderSizePixel = 0
+		NotifyDescription.Position = UDim2.new(0, 0, 0.352380961, 0)
+		NotifyDescription.Size = UDim2.new(0, 186, 0, 68)
+		NotifyDescription.Font = Enum.Font.SourceSans
+		NotifyDescription.Text = Desc
+		NotifyDescription.TextColor3 = Color3.fromRGB(111, 111, 111)
+		NotifyDescription.TextScaled = true
+		NotifyDescription.TextSize = 1.000
+		NotifyDescription.TextWrapped = true
+		NotifyDescription.TextXAlignment = Enum.TextXAlignment.Left
+		NotifyDescription.TextYAlignment = Enum.TextYAlignment.Top
+
+		UIListLayout.Parent = NotificationPlace
+		UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+		UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+		UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Bottom
+		UIListLayout.Padding = UDim.new(0, 5)
+		
+		task.wait(Time)
+		
+		CustomNotify:Destroy()
+		
+		
+		return LibraryCreate
+	end
+	
+	
+	return TabHandler
+	
+	
+end
+
+return Library
+
+
+
