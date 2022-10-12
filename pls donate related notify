@@ -8,8 +8,8 @@ function a:NewNotify(Text, Time, Color)
 		Color = Color or Color3.fromRGB(255,255,255)
 	
 	pcall(function()
-		if game.Players.LocalPlayer.PlayerGui.yes69 then
-			game.Players.LocalPlayer.PlayerGui.yes69:Destroy()
+		if game.CoreGui.yes69 then
+			game.CoreGui.yes69:Destroy()
 		else
 
 
@@ -39,7 +39,7 @@ end)
 	
 	local TextLabel = Instance.new("TextLabel")
 
-	TextLabel.Parent = game.Players.LocalPlayer.PlayerGui.yes69
+	TextLabel.Parent = sc
 	TextLabel.AnchorPoint = Vector2.new(0.5, 0.5)
 	TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	TextLabel.BackgroundTransparency = 1.000
@@ -80,4 +80,3 @@ end
 function a:Fix()
 	return a
 end
-return a
