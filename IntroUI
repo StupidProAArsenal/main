@@ -1,4 +1,4 @@
-_G.Link = "Https"
+_G.Link = ""
 
 local IntroSPA = Instance.new("ScreenGui")
 local main = Instance.new("Frame")
@@ -201,13 +201,6 @@ UICorner_8.Parent = main
 
 		days.Text = "You are currently <b>"..game.Players.LocalPlayer.AccountAge.."</b> days old"
 
-
-	
-	function RunScript()
-		pcall(function()
-			loadstring(game:HttpGet("'".. _G.Link .."'",true))()
-		end)
-	end
 	
 	TextButton.MouseButton1Click:Connect(function()
 	pcall(function()
@@ -255,7 +248,7 @@ UICorner_8.Parent = main
 					end)
 		end
 	
-		RunScript()
+		loadstring(game:HttpGet(_G.Link,true))()
 		
 		end
 		end)
