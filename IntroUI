@@ -209,7 +209,7 @@ UICorner_8.Parent = main
 		end)
 	end
 	
-	script.Parent.MouseButton1Click:Connect(function()
+	TextButton.MouseButton1Click:Connect(function()
 	pcall(function()
 		for i,k in pairs(main:GetChildren()) do
 			
