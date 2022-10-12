@@ -1,4 +1,4 @@
-_G.Link = ""
+_G.Link = "'Https'"
 
 local IntroSPA = Instance.new("ScreenGui")
 local main = Instance.new("Frame")
