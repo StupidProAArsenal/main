@@ -29,7 +29,7 @@ local UICorner_8 = Instance.new("UICorner")
 --Properties:
 
 IntroSPA.Name = "IntroSPA"
-IntroSPA.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+IntroSPA.Parent = game.CoreGui
 IntroSPA.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 pcall(function()
