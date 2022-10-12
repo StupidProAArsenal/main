@@ -32,6 +32,12 @@ IntroSPA.Name = "IntroSPA"
 IntroSPA.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 IntroSPA.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
+pcall(function()
+if syn then
+syn.protect_gui(IntroSPA)
+end
+end)
+
 main.Name = "main"
 main.Parent = IntroSPA
 main.AnchorPoint = Vector2.new(0.5, 0.5)
