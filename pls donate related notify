@@ -22,7 +22,13 @@ function lol:NewNotify(Text, Time, Color)
 	sc.Enabled = true
 	sc.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-	sc.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	sc.Parent = game.CoreGui
+	
+	pcall(function()
+if syn then
+syn.protect_gui(sc)
+end
+end)
 	
 	pcall(function()
 		if syn then
