@@ -1,0 +1,78 @@
+-- custom (not stolen from game of course)
+-- will use for few scripts 
+
+local lol = {}
+
+function lol:NewNotify(Text, Time, Color)
+	spawn(function()
+	Text = Text
+		Time = Time or 1
+		Color = Color or Color3.fromRGB(255,255,255)
+	
+	pcall(function()
+		if game.Players.LocalPlayer.PlayerGui.yes69 then
+			game.Players.LocalPlayer.PlayerGui.yes69:Destroy()
+		else
+
+
+		end
+	end)
+	local sc = Instance.new("ScreenGui")
+	sc.Name = "yes69"
+	sc.Enabled = true
+	sc.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+	sc.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	
+	pcall(function()
+		if syn then
+			syn.protect_gui(sc)
+		end
+	end)	
+	
+
+	wait()
+	
+	local TextLabel = Instance.new("TextLabel")
+
+	TextLabel.Parent = game.Players.LocalPlayer.PlayerGui.yes69
+	TextLabel.AnchorPoint = Vector2.new(0.5, 0.5)
+	TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	TextLabel.BackgroundTransparency = 1.000
+	TextLabel.Position = UDim2.new(0.5, 0, 0.931726933, 0)
+	TextLabel.Size = UDim2.new(0, 537, 0, 28)
+	TextLabel.Font = Enum.Font.GothamBlack
+	TextLabel.Text = Text
+	TextLabel.TextColor3 = Color
+	TextLabel.TextScaled = true
+	TextLabel.TextSize = 24.000
+	TextLabel.TextWrapped = true
+	
+
+	TextLabel.TextTransparency = 1
+
+	
+
+	spawn(function()
+	for i = 1, 10 do
+		TextLabel.TextTransparency = TextLabel.TextTransparency - 0.1
+		task.wait()
+		end
+	end)
+	TextLabel:TweenPosition(UDim2.new(0.5, 0,0.753, 0),"Out",Enum.EasingStyle.Quint,0.9)
+	
+	task.wait(Time)
+	
+	for i = 1, 10 do
+		TextLabel.TextTransparency = TextLabel.TextTransparency + 0.1
+		wait()
+	end
+	
+	task.wait()
+		TextLabel:Destroy()
+	end)
+end
+
+function fix()
+	return lol
+end
