@@ -1,4 +1,4 @@
-_G.Link = "'Https'"
+_G.Link = "Https"
 
 local IntroSPA = Instance.new("ScreenGui")
 local main = Instance.new("Frame")
@@ -74,6 +74,7 @@ welcoming.TextColor3 = Color3.fromRGB(255, 255, 255)
 welcoming.TextScaled = true
 welcoming.TextSize = 14.000
 welcoming.TextWrapped = true
+welcoming.RichText = true
 
 UICorner_2.CornerRadius = UDim.new(0.949999988, 0)
 UICorner_2.Parent = welcoming
@@ -94,6 +95,7 @@ days.Text = "You are currently <b>0</b> days old"
 days.TextColor3 = Color3.fromRGB(255, 255, 255)
 days.TextSize = 14.000
 days.TextWrapped = true
+days.RichText = true
 
 UICorner_3.CornerRadius = UDim.new(0.949999988, 0)
 UICorner_3.Parent = days
@@ -137,6 +139,7 @@ forumless.TextColor3 = Color3.fromRGB(86, 255, 83)
 forumless.TextScaled = true
 forumless.TextSize = 14.000
 forumless.TextWrapped = true
+forumless.RichText = true
 
 UICorner_5.CornerRadius = UDim.new(0.949999988, 0)
 UICorner_5.Parent = forumless
@@ -202,11 +205,12 @@ UICorner_8.Parent = main
 	
 	function RunScript()
 		pcall(function()
-			loadstring(game:HttpGet(_G.Link,true))()
+			loadstring(game:HttpGet("'".. _G.Link .."'",true))()
 		end)
 	end
 	
 	script.Parent.MouseButton1Click:Connect(function()
+	pcall(function()
 		for i,k in pairs(main:GetChildren()) do
 			
 			
@@ -218,7 +222,7 @@ UICorner_8.Parent = main
 					end
 					pcall(function()
 						spawn(function()
-							k:FindFirstChild("UIStroke"):Destroy()
+							
 							end)
 						end)
 					end)
@@ -254,12 +258,13 @@ UICorner_8.Parent = main
 		RunScript()
 		
 		end
+		end)
 	end)
 	
-	script.Parent.MouseEnter:Connect(function()
-		main:TweenSize(UDim2.new(0, 215,0, 43), "InOut", "Sine", 0.11)
+	TextButton.MouseEnter:Connect(function()
+		TextButton:TweenSize(UDim2.new(0, 215,0, 43), "InOut", "Sine", 0.11)
 	end)
 	
-	script.Parent.MouseLeave:Connect(function()
-		main:TweenSize(UDim2.new(0, 203,0, 33), "InOut", "Sine", 0.04)
+	TextButton.MouseLeave:Connect(function()
+		TextButton:TweenSize(UDim2.new(0, 203,0, 33), "InOut", "Sine", 0.04)
 	end)
