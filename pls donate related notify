@@ -1,9 +1,7 @@
 -- custom (not stolen from game of course)
 -- will use for few scripts 
-
-local Notify = {}
-
-function Notify:NewNotify(Text, Time, Color)
+local a = {}
+function a:NewNotify(Text, Time, Color)
 	spawn(function()
 	Text = Text
 		Time = Time or 1
@@ -79,6 +77,7 @@ end)
 	end)
 end
 
-function Notify:fix()
-	return Notify
+function a:Fix()
+	return a
 end
+return a
