@@ -1,9 +1,9 @@
 -- custom (not stolen from game of course)
 -- will use for few scripts 
 
-local lol = {}
+local Notify = {}
 
-function lol:NewNotify(Text, Time, Color)
+function Notify:NewNotify(Text, Time, Color)
 	spawn(function()
 	Text = Text
 		Time = Time or 1
@@ -79,6 +79,6 @@ end)
 	end)
 end
 
-function fix()
-	return lol
+function Notify:fix()
+	return Notify
 end
