@@ -202,9 +202,9 @@ UICorner_8.Parent = main
 	
 	TextButton.MouseButton1Click:Connect(function()
     
-    
+    		spawn(function()
 		loadstring(game:HttpGet('https://raw.githubusercontent.com/StupidProAArsenal/main/main/stupid%20guy%20in%20the%20west',true))()
-		
+		end)
 		main:Destroy()
 		
 		
