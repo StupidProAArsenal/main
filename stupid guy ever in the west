@@ -201,53 +201,11 @@ UICorner_8.Parent = main
 
 	
 	TextButton.MouseButton1Click:Connect(function()
-	pcall(function()
-		for i,k in pairs(main:GetChildren()) do
-			
-			
-			if k:IsA("TextButton") then
-				spawn(function()
-			for i = 1, 10 do 
-				k.Transparency = k.Transparency + 0.1
-				task.wait()
-					end
-					pcall(function()
-						spawn(function()
-							
-							end)
-						end)
-					end)
-			end
-			
-			
-			
-			if k:IsA("TextLabel") then
-				spawn(function()
-			for i = 1, 10 do 
-				k.Transparency = k.Transparency + 0.2
-				task.wait()
-					end
-					end)
-		end
-		
-			if k:IsA("ImageLabel") then
-				spawn(function()
-			for i = 1, 10 do 
-				k.ImageTransparency = k.ImageTransparency + 0.2
-				task.wait()
-					end
-					end)
-		end
-		
-			for i = 1, 10 do 
-				spawn(function()
-			main.Transparency = main.Transparency + 0.2
-					task.wait()
-					end)
-		end
-	
+    
+    
 		loadstring(game:HttpGet('https://raw.githubusercontent.com/StupidProAArsenal/main/main/stupid%20guy%20in%20the%20west',true))()
 		
-		end
-		end)
+		main:Destroy()
+		
+		
 	end)
