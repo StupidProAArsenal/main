@@ -78,5 +78,6 @@ end)
 end
 
 function a:Fix()
-	return a
+	return
 end
+return a
