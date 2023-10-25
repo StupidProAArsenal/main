@@ -1,5 +1,9 @@
 -- (STOLEN FROM DEKUDIMZ N SHAYMAN) OUR SERVICE COSTS 500 DOLLARS BECAUSE WE CREATED THIS AWESOME ANTICHEAT AND SCRIP[T].
 -- (NOT TESTED) Our high quality script is tested by 69 people. we guarantee no ban.
+-- NOTHING IS SKIDDED! EVERYTHING IS BY US THE BEST QUALITY PRODUCTIONS!
+-- WE ARE PRODUCE HIGH QUALITY SCRIPTS SINCE 1677.
+-- QUALITY PRODUCTIONS RIGHTS REVERSED
+
 repeat
     wait()
 until game:IsLoaded()
@@ -188,6 +192,7 @@ end)
         Title = "Auto Farm",
         Description = "yayayaya one click farm",
         Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.Position = CFrame.new(0,0,0)
          game.Players.LocalPlayer:Kick("You are banned from Blade Ball for 100000000000000000000 days. | Exploiting: Auto-Farming | If you think this was an mistake please appeal in our discord server.")
             })
         end
