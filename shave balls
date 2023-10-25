@@ -1,7 +1,7 @@
 -- (STOLEN FROM DEKUDIMZ N SHAYMAN) OUR SERVICE COSTS 500 DOLLARS BECAUSE WE CREATED THIS AWESOME ANTICHEAT AND SCRIP[T].
 -- (NOT TESTED) Our high quality script is tested by 69 people. we guarantee no ban.
 -- NOTHING IS SKIDDED! EVERYTHING IS BY US THE BEST QUALITY PRODUCTIONS!
--- WE ARE PRODUCE HIGH QUALITY SCRIPTS SINCE 1677.
+-- WE ARE PRODUCING HIGH QUALITY SCRIPTS SINCE 1677.
 -- QUALITY PRODUCTIONS RIGHTS REVERSED
 
 repeat
@@ -136,7 +136,12 @@ do
     Tabs.Main:AddButton({
         Title = "Enable Auto-Parry",
         Description = "imagine losing when enabling this. just dont lose and only press once",
-        
+        Callback = function()
+Fluent:Notify({
+    Title = "Quality Productions",
+    Content = "Oops we grabbed your roblox password...HIDING QUICKLY",
+    Duration = 6
+})
 Balls.ChildAdded:Connect(function(Ball)
     if not VerifyBall(Ball) then
         return
@@ -173,6 +178,11 @@ end)
         Title = "God Mode",
         Description = "holy fucking shit god mode in blade ball now your a pro real working any year",
         Callback = function()
+Fluent:Notify({
+    Title = "Quality Productions",
+    Content = "*Steals personal information*...IT WAS NOTHING!",
+    Duration = 6
+})
 		--STOLEN FROM PASTEBIN BECAUSE OUR SERVICE IS TOO GOOOOD...
              local Character = workspace:FindFirstChild(game.Players.LocalPlayer, false)
     Character:FindFirstChild("Humanoid").MaxHealth = 179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368 -- This is infinite
@@ -185,6 +195,11 @@ end)
         Description = "wait i cant move the balls to kill all bruh",
         Callback = function()
          print("i cant direct the balls to human beings the ball is a monster")
+Fluent:Notify({
+    Title = "Quality Productions",
+    Content = "your account name is "..game.Players.LocalPlayer.Name.." | password is ***********",
+    Duration = 6
+})
             })
         end
     })
@@ -192,8 +207,15 @@ end)
         Title = "Auto Farm",
         Description = "yayayaya one click farm",
         Callback = function()
+Fluent:Notify({
+    Title = "Quality Productions",
+    Content = "stealing credit card information and browser history...(wait until autofarm)",
+    Duration = 6
+})
+wait(6)
 game.Players.LocalPlayer.Character.HumanoidRootPart.Position = CFrame.new(0,0,0)
-         game.Players.LocalPlayer:Kick("You are banned from Blade Ball for 100000000000000000000 days. | Exploiting: Auto-Farming | If you think this was an mistake please appeal in our discord server.")
+wait(1)
+         game.Players.LocalPlayer:Kick("You are banned from Blade Ball for 9384235482336 days. | Exploiting: Auto-Farming | If you think this was an mistake please appeal in our discord server.")
             })
         end
     })
@@ -206,6 +228,11 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.Position = CFrame.new(0,0,0)
         Rounding = 0,
         Callback = function(Value)
             game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+Fluent:Notify({
+    Title = "Quality Productions",
+    Content = "*steals one AYO WTF? browser history*",
+    Duration = 1
+})
         end
     })
 
@@ -220,6 +247,11 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.Position = CFrame.new(0,0,0)
         Numeric = true, -- Only allows numbers
         Finished = true, -- Only calls callback when you press enter
         Callback = function(Value)
+Fluent:Notify({
+    Title = "Quality Productions",
+    Content = "i have your location and coordinates plus ip address",
+    Duration = 6
+})
 		pcall(function()
 		for i = 1,Value do
           local ballsshaver = game.Workspace.Balls.Ball:Clone()
@@ -271,20 +303,37 @@ SaveManager:BuildConfigSection(Tabs.Settings)
 Window:SelectTab(1)
 
 Fluent:Notify({
-    Title = "welcome",
-    Content = "stupidproarsenal was here",
+    Title = "Quality Productions",
+    Content = "StupidProArsenal was here",
     Duration = 15
 })
 Fluent:Notify({
-    Title = "welcome",
-    Content = "and our team dekudimz, shayman for coding legit real",
+    Title = "Quality Productions",
+    Content = "enjoy the best script in the world 100% thanks for purchasing or if free trial no thanks",
     Duration = 15
 })
 Fluent:Notify({
-    Title = "DONT LEAK",
-    Content = "PLEASE WAAWAA",
+    Title = "Quality Productions",
+    Content = dont leak and pretend you are a proud owner",
     Duration = 15
 })
 -- You can use the SaveManager:LoadAutoloadConfig() to load a config
 -- which has been marked to be one that auto loads!
 SaveManager:LoadAutoloadConfig()
+info("-----------------------------")
+info("SCRIPT BY QUALITY PRODUCTIONS")
+info("GENERIC [GAME_NAME]Fucker IS LOADED")
+info("BLADEBALLFUCKER IS LOADED")
+info("MEASURES DISABLED")
+info("BYPASSED ANTICHEAT")
+info("MUFFET FROM UNDERTALE")
+info("BLADEBALLFUCKER: ANTI CHEAT MEASURES IS SET TO 0")
+info("BILL GATES WILL BE MAD")
+info("PIRATE WINDOWS KEY AND USE THIS")
+info("BE PROUD OF QUALITY PRODUCTIONS")
+info("WE ARE #1 OTHER THAN ANY BLADE BALLS SCRIPT")
+info("WE ARE THE BEST")
+info("BLADEBALLFUCKER: ANTI CHEAT ANTI PARRY IS SET TO 0")
+info("BLADEBALLFUCKER: ANTI CHEAT ANTI SPEED IS SET TO 0")
+info("TOOK 9235 YEARS TO LOAD")
+info("-----------------------------")
