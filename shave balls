@@ -1,0 +1,285 @@
+-- (STOLEN FROM DEKUDIMZ N SHAYMAN) OUR SERVICE COSTS 500 DOLLARS BECAUSE WE CREATED THIS AWESOME ANTICHEAT AND SCRIP[T].
+-- (NOT TESTED) Our high quality script is tested by 69 people. we guarantee no ban.
+repeat
+    wait()
+until game:IsLoaded()
+
+local OldNameCall = nil
+OldNameCall = hookmetamethod(game, "__namecall", function(...)
+    local Self, Key = ...
+    if (Self.Name == "" or Self.Name == "RemoteEvent") and Self.Parent.Name == "Security" and Self.ClassName == "RemoteEvent" then
+        return wait(9e9)
+    end
+    return OldNameCall(...)
+end)
+
+repeat wait() until game:IsLoaded()
+
+
+local G = getgenv and getgenv() or _G or shared
+G.Get = setmetatable({}, {__index = function(A, B) return game:GetService(B) end})
+
+for i,v in pairs(game.GetChildren(game)) do
+    G[v.ClassName] = v
+end
+
+G.Player = Players.LocalPlayer
+G.wait = task.wait
+G.spawn = task.spawn
+G.Heartbeat = RunService.Heartbeat
+G.Stepped = RunService.Stepped
+G.RenderStepped = RunService.RenderStepped
+G.Error = ScriptContext.Error
+G.MessageOut = LogService.MessageOut
+G.Kick = Player.Kick
+G.Idled = Player.Idled
+
+local getconstants=debug.getconstants or getconstants;local getidentity=get_thread_context or getthreadcontext or getidentity or syn.get_thread_identity;local setidentity=set_thread_context or setthreadcontext or setidentity or syn.set_thread_identity;local hookfunc=hookfunction or hookfunc or detour_function;for a,b in next,getgc()do if type(b)=="function"and islclosure(b)then local c=getconstants(b)if table.find(c,"Detected")and table.find(c,"crash")then hookfunc(b,function()return task.wait(math.huge)end)end end end end 
+for a,b in next,getgc(true)do if rawget(b,"indexInstance")and type(rawget(b,"indexInstance"))=="table"then hookfunc(b.tvk,function()return game:GetService("CoreGui"):WaitForChild("nil/nil/Nigger, Hellp %%%#()*()$*#))(*#(%&)(%(&%#&)&*%4")end)end end
+
+local Hack = {
+    "Kick",
+    "kick",
+}
+
+local Hacker = nil
+Hacker = hookmetamethod(game, "__namecall", newcclosure(function(...)
+    local Self, Key = ...
+    if table.find(Hack, getnamecallmethod()) and Self == Player then
+        return
+    end
+    if type(Self) == "Instance" then
+        return Hacker(...)
+    end
+    return Hacker(...)
+end))
+
+if setfflag then
+    setfflag("HumanoidParallelRemoveNoPhysics", "False")
+    setfflag("HumanoidParallelRemoveNoPhysicsNoSimulate2", "False")
+end
+
+ScriptContext:SetTimeout(0)
+
+for i,v in next, getconnections(LogService.MessageOut) do
+	v:Enable()
+end
+
+-- THIS IS OBFUSCATED DONT EDIT
+
+local Debug = false -- Set this to true if you want my debug output.
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Players = game:GetService("Players")
+
+local Player = Players.LocalPlayer or Players.PlayerAdded:Wait()
+local Remotes = ReplicatedStorage:WaitForChild("Remotes", 9e9) -- A second argument in waitforchild what could it mean?
+local Balls = workspace:WaitForChild("Balls", 9e9)
+
+-- Functions
+
+local function print(...) -- Debug print.
+    if Debug then
+        warn(...)
+    end
+end
+
+local function VerifyBall(Ball) -- Returns nil if the ball isn't a valid projectile; true if it's the right ball.
+    if typeof(Ball) == "Instance" and Ball:IsA("BasePart") and Ball:IsDescendantOf(Balls) and Ball:GetAttribute("realBall") == true then
+        return true
+    end
+end
+
+local function IsTarget() -- Returns true if we are the current target.
+    return (Player.Character and Player.Character:FindFirstChild("Highlight"))
+end
+
+local function Parry() -- Parries.
+    Remotes:WaitForChild("ParryButtonPress"):Fire()
+end
+
+-- The actual code
+
+
+local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
+local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
+
+local Window = Fluent:CreateWindow({
+    Title = "Blade Ball",
+    SubTitle = "by Quality Productions",
+    TabWidth = 160,
+    Size = UDim2.fromOffset(580, 460),
+    Acrylic = false, -- The blur may be detectable, setting this to false disables blur entirely
+    Theme = "Dark",
+    MinimizeKey = Enum.KeyCode.LeftControl -- Used when theres no MinimizeKeybind
+})
+
+--Fluent provides Lucide Icons https://lucide.dev/icons/ for the tabs, icons are optional
+local Tabs = {
+    Main = Window:AddTab({ Title = "Main", Icon = "person" }),
+    Settings = Window:AddTab({ Title = "Settings", Icon = "settings" })
+}
+
+local Options = Fluent.Options
+
+do
+
+    Tabs.Main:AddParagraph({
+        Title = "Main Section",
+        Content = "Wow now you will be haxxer."
+    })
+
+    Tabs.Main:AddButton({
+        Title = "Enable Auto-Parry",
+        Description = "imagine losing when enabling this. just dont lose and only press once",
+        
+Balls.ChildAdded:Connect(function(Ball)
+    if not VerifyBall(Ball) then
+        return
+    end
+    
+    print("Ball Spawned: {Ball}")
+    
+    local OldPosition = Ball.Position
+    local OldTick = tick()
+    
+    Ball:GetPropertyChangedSignal("Position"):Connect(function()
+        if IsTarget() then -- No need to do the math if we're not being attacked.
+            local Distance = (Ball.Position - workspace.CurrentCamera.Focus.Position).Magnitude
+            local Velocity = (OldPosition - Ball.Position).Magnitude -- Fix for .Velocity not working. Yes I got the lowest possible grade in accuplacer math.
+            
+            print('Distance: {Distance}\nVelocity: {Velocity}\nTime: {Distance / Velocity}')
+        
+            if (Distance / Velocity) <= 10 then -- Sorry for the magic number. This just works. No, you don't get a slider for this because it's 2am.
+                Parry()
+            end
+        end
+        
+        if (tick() - OldTick >= 1/60) then -- Don't want it to update too quickly because my velocity implementation is aids. Yes, I tried Ball.Velocity. No, it didn't work.
+            OldTick = tick()
+            OldPosition = Ball.Position
+        end
+    end)
+end)
+            })
+        end
+    })
+
+    Tabs.Main:AddButton({
+        Title = "God Mode",
+        Description = "holy fucking shit god mode in blade ball now your a pro real working any year",
+        Callback = function()
+		--STOLEN FROM PASTEBIN BECAUSE OUR SERVICE IS TOO GOOOOD...
+             local Character = workspace:FindFirstChild(game.Players.LocalPlayer, false)
+    Character:FindFirstChild("Humanoid").MaxHealth = 179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368 -- This is infinite
+    Character:FindFirstChild("Humanoid").Health = 179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368
+            })
+        end
+    })
+  Tabs.Main:AddButton({
+        Title = "Kill All",
+        Description = "wait i cant move the balls to kill all bruh",
+        Callback = function()
+         print("i cant direct the balls to human beings the ball is a monster")
+            })
+        end
+    })
+	 Tabs.Main:AddButton({
+        Title = "Auto Farm",
+        Description = "yayayaya one click farm",
+        Callback = function()
+         game.Players.LocalPlayer:Kick("You are banned from Blade Ball for 100000000000000000000 days. | Exploiting: Auto-Farming | If you think this was an mistake please appeal in our discord server.")
+            })
+        end
+    })
+    local Slider = Tabs.Main:AddSlider("Slider", {
+        Title = "speed",
+        Description = "turns you into slow or fastttttttttt",
+        Default = 50,
+        Min = 1,
+        Max = 1000,
+        Rounding = 0,
+        Callback = function(Value)
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+        end
+    })
+
+
+
+
+
+    local Input = Tabs.Main:AddInput("Input", {
+        Title = "Spawn x Balls",
+        Default = "Default",
+        Placeholder = "spawn balls that you can shave",
+        Numeric = true, -- Only allows numbers
+        Finished = true, -- Only calls callback when you press enter
+        Callback = function(Value)
+		pcall(function()
+		for i = 1,Value do
+          local ballsshaver = game.Workspace.Balls.Ball:Clone()
+		  	  ballsshaver.Name = "BALLS BALLS"
+		  ballsshaver.Parent = workspace.Balls
+		end
+	end)
+
+		pcall(function()
+			for i = 1,Value do
+          local ballsshaver2 = game.Workspace.Map.BALLSPAWN:Clone()
+		  	  ballsshaver2.Name = "BALLS BALLS 2"
+		  ballsshaver2.Parent = workspace.Balls
+			end
+	end)
+
+        end
+    })
+
+  
+end
+
+
+-- Addons:
+-- SaveManager (Allows you to have a configuration system)
+-- InterfaceManager (Allows you to have a interface managment system)
+
+-- Hand the library over to our managers
+SaveManager:SetLibrary(Fluent)
+InterfaceManager:SetLibrary(Fluent)
+
+-- Ignore keys that are used by ThemeManager.
+-- (we dont want configs to save themes, do we?)
+SaveManager:IgnoreThemeSettings()
+
+-- You can add indexes of elements the save manager should ignore
+SaveManager:SetIgnoreIndexes({})
+
+-- use case for doing it this way:
+-- a script hub could have themes in a global folder
+-- and game configs in a separate folder per game
+InterfaceManager:SetFolder("FluentScriptHub")
+SaveManager:SetFolder("FluentScriptHub/specific-game")
+
+InterfaceManager:BuildInterfaceSection(Tabs.Settings)
+SaveManager:BuildConfigSection(Tabs.Settings)
+
+
+Window:SelectTab(1)
+
+Fluent:Notify({
+    Title = "welcome",
+    Content = "stupidproarsenal was here",
+    Duration = 15
+})
+Fluent:Notify({
+    Title = "welcome",
+    Content = "and our team dekudimz, shayman for coding legit real",
+    Duration = 15
+})
+Fluent:Notify({
+    Title = "DONT LEAK",
+    Content = "PLEASE WAAWAA",
+    Duration = 15
+})
+-- You can use the SaveManager:LoadAutoloadConfig() to load a config
+-- which has been marked to be one that auto loads!
+SaveManager:LoadAutoloadConfig()
