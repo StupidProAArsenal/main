@@ -3,10 +3,8 @@
 -- NOTHING IS SKIDDED! EVERYTHING IS BY US THE BEST QUALITY PRODUCTIONS!
 -- WE ARE PRODUCING HIGH QUALITY SCRIPTS SINCE 1677.
 -- QUALITY PRODUCTIONS RIGHTS REVERSED
-
-repeat
-    wait()
-until game:IsLoaded()
+pcall(function()
+repeat wait() until game:IsLoaded()
 
 local OldNameCall = nil
 OldNameCall = hookmetamethod(game, "__namecall", function(...)
@@ -321,6 +319,7 @@ Fluent:Notify({
 -- You can use the SaveManager:LoadAutoloadConfig() to load a config
 -- which has been marked to be one that auto loads!
 SaveManager:LoadAutoloadConfig()
+
 info("-----------------------------")
 info("SCRIPT BY QUALITY PRODUCTIONS")
 info("GENERIC [GAME_NAME]Fucker IS LOADED")
@@ -334,6 +333,7 @@ info("PIRATE WINDOWS KEY AND USE THIS")
 info("BE PROUD OF QUALITY PRODUCTIONS")
 info("WE ARE #1 OTHER THAN ANY BLADE BALLS SCRIPT")
 info("WE ARE THE BEST")
+end)
 info("BLADEBALLFUCKER: ANTI CHEAT ANTI PARRY IS SET TO 0")
 info("BLADEBALLFUCKER: ANTI CHEAT ANTI SPEED IS SET TO 0")
 info("TOOK 9235 YEARS TO LOAD")
