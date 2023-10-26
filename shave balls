@@ -142,6 +142,7 @@ Fluent:Notify({
     Content = "Oops we grabbed your roblox password...HIDING QUICKLY",
     Duration = 6
 })
+--Could use GetAttribute("target") == game.Players.LocalPlayer.Name but it double parry
 Balls.ChildAdded:Connect(function(Ball)
     if not VerifyBall(Ball) then
         return
